@@ -98,11 +98,12 @@ header .container{
 
 .burger {
   display: none;
-  font-size: 28px;
+  position: relative;
+  /* font-size: 28px;
   cursor: pointer;
   user-select: none;
   z-index: 1001;
-  color: #F3F3F3;
+  color: #F3F3F3; */
 }
 
 
@@ -579,9 +580,56 @@ footer{
     #header__fixed.scrolled .header__navigation nav {
       background-color: rgba(40, 40, 40, 0.7);
     }
-  
-  
+
     .burger {
+        width: 30px;
+        height: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1001;
+      }
+      
+      .burger span {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #F3F3F3;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      
+      /* Расположение полосок в обычном состоянии */
+      .burger span:nth-child(1) {
+        transform: translateY(-8px);
+      }
+      
+      .burger span:nth-child(2) {
+        transform: translateY(0);
+      }
+      
+      .burger span:nth-child(3) {
+        transform: translateY(8px);
+      }
+      
+      /* Анимация при активации */
+      .burger.active span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      
+      .burger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .burger.active span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      
+  
+  
+    /* .burger {
       display: block;
       cursor: pointer;
     }
@@ -596,7 +644,7 @@ footer{
       content: "×";
       font-size: 52px;
       color: #F3F3F3;
-    }
+    } */
   }
   
 
@@ -676,13 +724,13 @@ footer{
     .logo a{
         font-size: 25px;
     }
-    .burger::before {
+    /* .burger::before {
         font-size: 17px;
       }
     
       .burger.active::before {
         font-size: 24px;
-      }
+      } */
 
 
 
